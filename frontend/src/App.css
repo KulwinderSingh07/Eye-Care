@@ -624,6 +624,7 @@
     display: flex;
     flex-direction: column;
     width: 40%;
+    /* align-items: center; */
     justify-content: space-between;
   }
   .reportContainer h1{
@@ -723,3 +724,33 @@
 }
 
 
+.gobackButton{
+  width: 20%;
+  text-align: center;
+  border-radius: 2rem;
+  padding: 10px;
+  background-color:#1f459e;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  
+}
+.gobackButton:hover{
+  border: 1px solid black;
+  background-color:rgb(178, 224, 110);
+  color:black;
+  border-radius: 1.5rem;
+  padding: 12px;
+}
+
+.validationtext{
+  padding: 1px;
+  color:#1f459e;
+  font-weight: bold;
+}
+
+.greencolor{
+  padding: 1px;
+  color: rgb(107, 235, 107);
+  font-weight: bold;
+}

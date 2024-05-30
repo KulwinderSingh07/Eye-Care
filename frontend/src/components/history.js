@@ -48,6 +48,7 @@ const ReportHistory = () => {
       {user && reportList && (
         <div className="reportContainer">
           <h1>Report Record History</h1>
+          <a href="/dashboard" className="gobackButton">DashBoard</a>
           <br />
           <div className="reposrtBorder">
           {reportList.map((report) => {
@@ -88,7 +89,7 @@ const ReportHistory = () => {
         })}
       </div>
         </div>
-      )}http://localhost:3000/dashboard
+      )}
     </div>
   );
 };

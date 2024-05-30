@@ -8,11 +8,13 @@ import SignUpCompoent from "./components/signup";
 import ReportHistory from "./components/history";
 import PaymentUpdateComonent from "./components/paymentUpdate";
 import DoctorCompoent from "./components/doctorPage";
+import NavBarCompoent from "./components/navBar";
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        {/* <NavBarCompoent/> */}
       <Route exact path="/" element={<LoginComponent />} />
       <Route exact path="/dashboard" element={<MainPageCompoennt />} />
       <Route exact path="/signup" element={<SignUpCompoent />} />

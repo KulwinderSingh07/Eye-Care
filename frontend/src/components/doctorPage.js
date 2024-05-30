@@ -47,6 +47,7 @@ const DoctorCompoent = () => {
       {appointmetnList && (
         <div className="reportContainer">
           <h1>List of Doctor's Appointment</h1>
+          <a href="/dashboard" className="gobackButton">DashBoard</a>
           <br />
           <div className="reposrtBorder">
           {appointmetnList.map((report) => {

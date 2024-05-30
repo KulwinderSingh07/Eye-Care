@@ -13,7 +13,7 @@ const VideoPageCompoent = () => {
         e.preventDefault();
         const formData= new FormData()
          formData.append('file',file);  
-        const resp=await axios.post("http://localhost:5000/",formData)
+        const resp=await axios.post("http://localhost:8000/",formData)
         // console.log(resp.data.data[0])
         if(resp.data.predicted=="false"){
             swal({

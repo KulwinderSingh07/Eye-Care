@@ -6,6 +6,7 @@ const jwt_key=process.env.jWT_SECRET_KEY
 const signup_controller=async(req,res)=>{
     try{
     const user_data=req.body;
+    if(!user_data.Email.includes("@gmail.com")) throw new Error("Not a valid email")
     console.log(user_data)
     const UserCheck=await UserModel.findOne({Email:user_data.Email})
     if(UserCheck) throw new Error("User already registered")
@@ -19,7 +20,7 @@ const signup_controller=async(req,res)=>{
         cookie:token
     })
     }catch(err){
-        res.status(400).json({
+        res.json({
             message:err.message,
             registered:false
         })
@@ -31,9 +32,10 @@ const signin_controller=async(req,res)=>{
         const Login_Data=req.body
         console.log("login data",Login_Data)
         // console.log(req.cookies)
+        if(!Login_Data.Email.includes("@gmail.com")) throw new Error("Not a valid email")
         const Req_token=Login_Data?.Token
         // console.log(Req_token)
-        if(Req_token){
+        if(Req_token && Req_token!='undefined'){
             const user_id=jwt.verify(Req_token,jwt_key).payload
             const UserDocument=await UserModel.findById(user_id)
             if(!UserDocument) throw new Error("User not found");
